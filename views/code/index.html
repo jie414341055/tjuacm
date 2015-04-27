@@ -1,10 +1,46 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
+<%- partial('../code/sidebar') %>
+<div id='content'>
+    <div class='panel'>
+        <div class='header'>
+            <ol class='breadcrumb'>
+                <li><a href='/'>主页</a><span class='divider'>/</span></li>
 
-</body>
-</html>
+                <li class='active'>贴个代码</li>
+            </ol>
+        </div>
+
+
+        <div class='inner'>
+            <form id='submit_code' class='form-horizontal' action='/codes' method='post'>
+                <div class='control-group'>
+                    <label class='control-label' for='name'>Poster</label>
+                    <div class='controls'>
+                        <input class='input-xxlarge' id='name' name='poster' size='30' type='text' value=""/>
+                    </div>
+                </div>
+                <div class='control-group'>
+                    <label class='control-label' for='name'>Syntax</label>
+                    <div class='controls'>
+                        <select name="syntax" id="id_syntax" class="input-xxlarge">
+                            <% for(var i = 0;i < langs.length; ++i) { %>
+                            <% var key = Object.keys(langs[i])[0]; %>
+                            <option value="<%= key %>"><%= langs[i][key] %></option>
+                            <% } %>
+                        </select>
+                    </div>
+                </div>
+                <div class='control-group'>
+                    <label class='control-label' for='name'>Content</label>
+                    <div class='controls'>
+                        <textarea id="id_content" rows="20" cols="80" name="content" class="input-xxlarge"></textarea>
+                    </div>
+                </div>
+                <input type='hidden' id='action' name='action' value='change_setting'/>
+                <input type='hidden' name='_csrf' value=''/>
+                <div class='form-actions'>
+                    <input type='submit' class='span-primary submit_btn' data-loading-text="正在提交.." value='提交'/>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

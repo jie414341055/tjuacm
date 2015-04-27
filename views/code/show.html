@@ -1,10 +1,24 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
+<%- partial('../code/sidebar') %>
+<div id='content'>
+    <div class='panel'>
+        <div class='header topic_header'>
+            <span class="topic_full_title">
+                <%= code.user %>
+            </span>
+            <div class="changes">
+                <span>
+                发布于  <%= when %>
+                </span>
+            </div>
+        </div>
 
-</body>
-</html>
+
+
+        <div class='inner topic'>
+            <div class="markdown-text">
+                <pre class="prettyprint  language-<%= code.lang %>"><code><%= code.content %>
+                </code>
+                </pre>
+        </div>
+    </div>
+</div>

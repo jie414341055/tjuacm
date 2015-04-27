@@ -80,9 +80,9 @@ var config = {
 
   // github 登陆的配置
   GITHUB_OAUTH: {
-    clientID: 'your GITHUB_CLIENT_ID',
-    clientSecret: 'your GITHUB_CLIENT_SECRET',
-    callbackURL: 'http://cnodejs.org/auth/github/callback'
+    clientID: 'fac8b1a84c92e0249ee3',
+    clientSecret: '869c27177e5b0235ca309193998c6ce69afa9e10',
+    callbackURL: 'http://www.tjuacm.org/auth/github/callback'
   },
   // 是否允许直接注册（否则只能走 github 的方式）
   allow_sign_up: true,

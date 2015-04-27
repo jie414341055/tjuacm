@@ -7,6 +7,7 @@
  */
 
 var config = require('./config');
+var langs = require('./langs');
 
 if (!config.debug) {
   require('newrelic');
@@ -113,6 +114,7 @@ if (!config.debug) {
 // set static, dynamic helpers
 _.extend(app.locals, {
   config: config,
+  langs: langs,
   Loader: Loader,
   assets: assets
 });
@@ -153,7 +155,7 @@ if (config.debug) {
 }
 
 app.listen(config.port, function () {
-  console.log("NodeClub listening on port %d", config.port);
+  console.log("TJU-ACM Club listening on port %d", config.port);
   console.log("God bless love....");
   console.log("You can debug your app with http://" + config.hostname + ':' + config.port);
 });
