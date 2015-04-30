@@ -5,8 +5,10 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var utility = require('utility');
+var shortid = require('shortid');
 
 var CodeSchema = new Schema({
+    _id: {type: String, unique: true, 'default': shortid.generate},
     user: {type: String},
     lang: {type: String},
     content: {type: String},

@@ -19,8 +19,8 @@ var submit = function(req, res, next) {
     var syntax = req.body['syntax'];
     var content = req.body['content'];
 
-    //console.log(req);
-    console.log(poster);
+    // console.log(req);
+    // console.log(poster);
     var code = new CodeModel();
     code.user = poster;
     code.lang = syntax;
