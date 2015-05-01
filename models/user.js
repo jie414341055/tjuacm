@@ -45,7 +45,7 @@ var UserSchema = new Schema({
 UserSchema.virtual('avatar_url').get(function () {
   //var url = this.avatar || ('https://gravatar.com/avatar/' + utility.md5(this.email.toLowerCase()) + '?size=48');
   // 使用v2ex的gravatar CDN
-  var url = 'https://cdn.v2ex.com/gravatar/' + utility.md5(this.email.toLowerCase()) + '?size=48');
+  var url = 'https://cdn.v2ex.com/gravatar/' + utility.md5(this.email.toLowerCase()) + '?size=48';
 
   // www.gravatar.com 被墙
   // url = url.replace('//www.gravatar.com', '//gravatar.com');
