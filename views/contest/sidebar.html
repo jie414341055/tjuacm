@@ -12,15 +12,15 @@
             </ul>
         </div>
     </div>
+
+    <% if (typeof(current_user) != 'undefined' && current_user.is_admin) { %>
     <div class="panel">
         <div class='inner'>
-            <a href='/contests' id='create_code_btn'>
-                <span class='span-primary'>历史比赛</span>
-            </a>
             <a href='/contests/create' id='create_code_btn'>
                 <span class='span-success'>新建比赛</span>
             </a>
 
         </div>
     </div>
+    <% } %>
 </div>

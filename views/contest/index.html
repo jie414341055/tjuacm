@@ -14,16 +14,20 @@
             <table class="table table-striped">
                 <tr>
                     <th>Cid</th>
-                    <th>Name</th>
-                    <th>Start Time</th>
-                    <th>End Time</th>
+                    <th>比赛名称</th>
+                    <th>开始时间</th>
+                    <th>结束时间</th>
+                    <th>报名截止时间</th>
+                    <th>报名人数</th>
                 </tr>
                 <% for (var i = 0;i < contests.length; ++i) { %>
                 <tr>
                     <td><%= contests[i].cid %></td>
-                    <td><%= contests[i].name %></td>
-                    <td><%= moment(contests[i].st_time).format('YYYY:MM:DD HH:mm:ss') %></td>
-                    <td><%= moment(contests[i].ed_time).format('YYYY:MM:DD HH:mm:ss') %></td>
+                    <td><a href="/contests/show/<%= contests[i].cid%>"><%= contests[i].name %></a></td>
+                    <td><%= moment(contests[i].st_time).format('YYYY-MM-DD HH:mm:ss') %></td>
+                    <td><%= moment(contests[i].ed_time).format('YYYY-MM-DD HH:mm:ss') %></td>
+                    <td><%= moment(contests[i].deadline).format('YYYY-MM-DD HH:mm:ss') %></td>
+                    <td><%= contests[i].reg_num %></td>
                 </tr>
                 <% } %>
             </table>

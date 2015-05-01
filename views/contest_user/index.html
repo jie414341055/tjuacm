@@ -1,0 +1,81 @@
+<%- partial('../contest_user/sidebar') %>
+
+<div id='content'>
+    <div class='panel'>
+        <div class='header'>
+            <ul class='breadcrumb'>
+                <li><a href='/'>主页</a><span class='divider'>/</span></li>
+                <% if (typeof(contest_name) !== 'undefined' && contest_name) { %>
+                <li class='active'><%= contest_name %></li>
+                <% } else { %>
+                <li class='active'>提示</li>
+                <% } %>
+            </ul>
+        </div>
+        <div class='inner'>
+            <% if (typeof(error) !== 'undefined' && error) { %>
+            <div class="alert alert-error">
+                <a class="close" data-dismiss="alert" href="#">&times;</a>
+                <strong><%= error %></strong>
+            </div>
+            <% } else if (typeof(success) !== 'undefined' && success) { %>
+            <div class="alert alert-success">
+                <strong><%= success %></strong>
+            </div>
+            <% } else { %>
+            <form id='register_form' class='form-horizontal' action='/contests/submit' method='post'>
+                <input type="hidden" name="cid" value="<%= cid %>" />
+                <div class='control-group'>
+                    <label class='control-label' for='name'>姓名</label>
+
+                    <div class='controls'>
+                        <input class='input-xlarge' id='name' name='name' size='30' type='text' value=''/>
+                    </div>
+                </div>
+                <div class='control-group'>
+                    <label class='control-label' for='sid'>学号</label>
+
+                    <div class='controls'>
+                        <input class='input-xlarge' id='sid' name='sid' size='30' type='text'/>
+                    </div>
+                </div>
+                <div class='control-group'>
+                    <label class='control-label' for='email'>邮箱</label>
+
+                    <div class='controls'>
+                        <input class='input-xlarge' id='email' name='email' size='30' type='email'/>
+                    </div>
+                </div>
+                <div class='control-group'>
+                    <label class='control-label' for='school'>学院</label>
+
+                    <div class='controls'>
+                        <input class='input-xlarge' id='school' name='school' size='30' type='text'/>
+                    </div>
+                </div>
+                <div class='control-group'>
+                    <label class='control-label' for='grade'>年级</label>
+
+                    <div class='controls'>
+                        <input class='input-xlarge' id='grade' name='grade' size='30' type='text'/>
+                    </div>
+                </div>
+                <div class='control-group'>
+                    <label class='control-label' for='ojid'>TOJ账号</label>
+
+                    <div class='controls'>
+                        <input class='input-xlarge' id='ojid' name='ojid' size='30' type='text'/>
+                    </div>
+                </div>
+                <input type='hidden' id='action' name='action' value='change_setting'/>
+                <input type='hidden' name='_csrf' value=''/>
+
+                <div class='form-actions'>
+                    <input type='submit' class='span-primary' value='报名'/>
+
+                </div>
+            </form>
+            <% } %>
+        </div>
+    </div>
+</div>

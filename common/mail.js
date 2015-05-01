@@ -70,3 +70,27 @@ exports.sendResetPassMail = function (who, token, name) {
     html: html
   });
 };
+
+/*
+ * 发送比赛报名信息
+ * @param {Object} cu 比赛报名人员
+ * */
+exports.sendRegisterContest = function(cu, contest_name) {
+    var from = util.format('%s <%s>', config.name, config.mail_opts.auth.user);
+    var to = cu.email;
+    var subject = contest_name + '报名信息';
+    var html = '<p>您的报名信息如下:</p>' +
+        '<p>姓名:' + cu.name + '<br/>' +
+        '学号:' + cu.sid + '<br/>' +
+        '学院:' + cu.school + '<br/>' +
+        '年级:' + cu.grade + '<br/>' +
+        'TOJ账号:' + cu.ojid + '</p>' +
+        '<p>祝比赛顺利!</p>';
+
+    exports.sendMail({
+        from: from,
+        to: to,
+        subject: subject,
+        html: html
+    });
+};

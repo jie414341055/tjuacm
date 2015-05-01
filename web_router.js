@@ -16,7 +16,7 @@ var message = require('./controllers/message');
 var topic = require('./controllers/topic');
 var code = require('./controllers/code');
 var contest = require('./controllers/contest');
-// var contestUser = require('./controllers/contest_user');
+var contestUser = require('./controllers/contest_user');
 var reply = require('./controllers/reply');
 var rss = require('./controllers/rss');
 var staticController  = require('./controllers/static');
@@ -105,9 +105,13 @@ router.post('/codes', code.submit);
 router.get('/code/:id', code.show);
 
 // 管理比赛
-router.get('/contests', auth.adminRequired, contest.index);
+router.get('/contests', auth.userRequired, contest.index);
 router.get('/contests/create', auth.adminRequired, contest.get_create);
+router.get('/contests/show/:cid', auth.userRequired, contest.show);
 router.post('/contests/create', auth.adminRequired, contest.post_create);
+
+router.get('/contests/:cid/submit', auth.userRequired, contestUser.index);
+router.post('/contests/submit',auth.userRequired, contestUser.submit);
 
 
 

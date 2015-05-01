@@ -6,6 +6,7 @@ var models = require('../models');
 var moment = require('moment');
 
 var Contest = models.Contest;
+var ContestUser = models.ContestUser;
 
 /*
  * 管理员查看历史比赛列表界面
@@ -85,5 +86,36 @@ exports.post_create = function(req, res, next) {
             });
         }
         return res.redirect('/contests');
+    });
+};
+
+/*
+ * 显示一个比赛已经报名的情况
+ *
+ */
+exports.show = function(req, res, next) {
+    var cid = parseInt(req.params.cid);
+    if (!cid) {
+        return res.render('notify/notify', {
+            error: '不存在的比赛.'
+        });
+    }
+    Contest.findOne({cid: cid}, function(err, contest) {
+        if (err || !contest) {
+            return res.render('notify/notify', {
+                error: '不存在的比赛.'
+            });
+        }
+        ContestUser.find({cid: cid}, function(err, users) {
+            if (err) {
+                return res.render('notify/notify', {
+                    error: '数据库错误.' + err
+                });
+            }
+            res.render('contest/show', {
+                users : users,
+                contest: contest
+            });
+        });
     });
 };

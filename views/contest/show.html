@@ -1,0 +1,39 @@
+<%- partial('../contest/sidebar') %>
+<div id='content'>
+    <div class='panel'>
+        <div class='header'>
+            <ol class='breadcrumb'>
+                <li><a href='/'>主页</a><span class='divider'>/</span></li>
+                <li><a href='/contests'>历史比赛</a><span class='divider'>/</span></li>
+                <li class='active'><%= contest.name %></li>
+            </ol>
+        </div>
+
+
+        <div class='inner'>
+            <table class="table table-striped">
+                <tr>
+                    <th>Cid</th>
+                    <th>姓名</th>
+                    <th>学号</th>
+                    <th>学院</th>
+                    <th>年级</th>
+                    <th>邮箱</th>
+                    <th>TOJ账号</th>
+                </tr>
+                <% for (var i = 0;i < users.length; ++i) { %>
+                <tr>
+                    <td><%= contest.cid %></td>
+                    <td><%= users[i].name %></td>
+                    <td><%= users[i].sid %></td>
+                    <td><%= users[i].school %></td>
+                    <td><%= users[i].grade %></td>
+                    <td><%= users[i].email %></td>
+                    <td><%= users[i].ojid %></td>
+                </tr>
+                <% } %>
+            </table>
+        </div>
+    </div>
+</div>
+
