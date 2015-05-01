@@ -36,6 +36,12 @@
                         <input class='input-xxlarge' id='ed_time' name='ed_time' size='30' type='text' value=""/>
                     </div>
                 </div>
+                <div class='control-group'>
+                    <label class='control-label' for='name'>报名截止时间</label>
+                    <div class='controls'>
+                        <input class='input-xxlarge' id='deadline' name='deadline' size='30' type='text' value=""/>
+                    </div>
+                </div>
                 <input type='hidden' name='_csrf' value=''/>
                 <div class='form-actions'>
                     <input type='submit' class='span-primary submit_btn' data-loading-text="正在提交.." value='提交'/>
@@ -49,6 +55,9 @@
         format: 'yyyy-mm-dd hh:ii:ss'
     });
     $('#ed_time').datetimepicker({
+        format: 'yyyy-mm-dd hh:ii:ss'
+    });
+    $('#deadline').datetimepicker({
         format: 'yyyy-mm-dd hh:ii:ss'
     });
 </script>
