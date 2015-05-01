@@ -3,11 +3,10 @@
   "version": "2.0.0",
   "private": true,
   "main": "app.js",
-  "description": "A Node.js bbs using MongoDB",
-  "repository": "https://github.com/cnodejs/nodeclub",
+  "description": "A club using Node.js and MongoDB",
+  "repository": "https://github.com/jie414341055/tjuacm",
   "customHost": [
-    "cnodejs.org",
-    "club.cnodejs.org"
+    "tjuacm.org"
   ],
   "engines": {
     "node": "0.12.x"
