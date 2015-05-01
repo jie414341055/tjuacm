@@ -39,6 +39,7 @@ exports.get_create = function(req, res, next) {
 exports.post_create = function(req, res, next) {
     var cid =  req.body['cid'] ? req.body['cid'] : null;
     var name  = req.body['name'] ? req.body['name'] : null;
+    var deadline = req.body['deadline'] ? req.body['deadline'] : null;
     var st_time = req.body['st_time'] ? req.body['st_time'] : null;
     var ed_time = req.body['ed_time'] ? req.body['ed_time'] : null;
 
@@ -50,6 +51,11 @@ exports.post_create = function(req, res, next) {
     if (!name) {
         return res.render('notify/notify', {
             error: '请输入比赛名称.'
+        });
+    }
+    if (!ed_time) {
+        return res.render('notify/notify', {
+            error: '请输入比赛报名截止时间.'
         });
     }
     if (!st_time) {
@@ -68,6 +74,7 @@ exports.post_create = function(req, res, next) {
     var contest = new Contest();
     contest.cid = cid;
     contest.name = name;
+    contest.deadline = deadline;
     contest.st_time = st_time;
     contest.ed_time = ed_time;
 

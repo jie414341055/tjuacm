@@ -12,6 +12,7 @@ var ContestSchema = new Schema({
     name: {type: String},
     st_time: {type: Date},
     ed_time: {type: Date},
+    deadline: {type: Date}, //报名截止时间
     create_at: {type: Date, default: Date.now},
     update_at: {type: Date, default: Date.now},
 });
