@@ -1,0 +1,33 @@
+<%- partial('../contest/sidebar') %>
+<div id='content'>
+    <div class='panel'>
+        <div class='header'>
+            <ol class='breadcrumb'>
+                <li><a href='/'>主页</a><span class='divider'>/</span></li>
+
+                <li class='active'>历史比赛</li>
+            </ol>
+        </div>
+
+
+        <div class='inner'>
+            <table class="table table-striped">
+                <tr>
+                    <th>Cid</th>
+                    <th>Name</th>
+                    <th>Start Time</th>
+                    <th>End Time</th>
+                </tr>
+                <% for (var i = 0;i < contests.length; ++i) { %>
+                <tr>
+                    <td><%= contests[i].cid %></td>
+                    <td><%= contests[i].name %></td>
+                    <td><%= moment(contests[i].st_time).format('YYYY:MM:DD HH:mm:ss') %></td>
+                    <td><%= moment(contests[i].ed_time).format('YYYY:MM:DD HH:mm:ss') %></td>
+                </tr>
+                <% } %>
+            </table>
+        </div>
+    </div>
+</div>
+

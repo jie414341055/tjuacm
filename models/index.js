@@ -15,6 +15,8 @@ require('./reply');
 require('./topic_collect');
 require('./message');
 require('./code');
+require('./contest');
+require('./contest_user');
 
 exports.User = mongoose.model('User');
 exports.Topic = mongoose.model('Topic');
@@ -22,3 +24,5 @@ exports.Reply = mongoose.model('Reply');
 exports.TopicCollect = mongoose.model('TopicCollect');
 exports.Message = mongoose.model('Message');
 exports.Code = mongoose.model('Code');
+exports.Contest = mongoose.model('Contest');
+exports.ContestUser = mongoose.model('ContestUser');
