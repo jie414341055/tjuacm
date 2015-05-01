@@ -1,4 +1,5 @@
 <div id='sidebar'>
+    <% if (typeof(current_user) != 'undefined' && current_user.is_admin) { %>
     <div class='panel'>
         <div class='header'>
             <span class='col_fade'>关于</span>
@@ -12,14 +13,23 @@
             </ul>
         </div>
     </div>
-
-    <% if (typeof(current_user) != 'undefined' && current_user.is_admin) { %>
     <div class="panel">
         <div class='inner'>
             <a href='/contests/create' id='create_code_btn'>
                 <span class='span-success'>新建比赛</span>
             </a>
 
+        </div>
+    </div>
+    <% } else { %>
+    <div class='panel'>
+        <div class='header'>
+            <span class='col_fade'>关于</span>
+        </div>
+        <div class='inner'>
+            <ul>
+                <li>近年比赛列表</li>
+            </ul>
         </div>
     </div>
     <% } %>
