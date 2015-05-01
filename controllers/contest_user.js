@@ -28,7 +28,6 @@ exports.index = function(req, res, next) {
                 error: '报名已截止.'
             });
         }
-        console.log(contest.name);
         res.render('contest_user/index', {
             contest_name: contest.name,
             cid: cid
@@ -107,7 +106,6 @@ exports.submit = function(req, res, next) {
             cu.school = school;
             cu.grade = grade;
             cu.ojid = ojid;
-            console.log(cu);
 
             cu.save(function(err, doc) {
                 if (err) {

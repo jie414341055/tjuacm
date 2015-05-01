@@ -18,7 +18,9 @@ var config = {
   site_headers: [
     '<meta name="author" content="EDP@TAOBAO" />'
   ],
-  site_logo: '/public/images/cnodejs_light.svg', // default is `name`
+  // site_logo: '/public/images/cnodejs_light.svg', // default is `name`
+  site_logo: '/public/images/icpc_logo.png', // default is `name`
+
   site_icon: '/public/images/cnode_icon_32.png', // 默认没有 favicon, 这里填写网址
   // 右上角的导航区
   site_navs: [
@@ -28,7 +30,7 @@ var config = {
   // cdn host，如 http://cnodejs.qiniudn.com
   site_static_host: '', // 静态文件存储域名
   // 社区的域名
-  host: 'localhost',
+  host: 'tjuacm.org',
   // 默认的Google tracker ID，自有站点请修改，申请地址：http://www.google.com/analytics/
   google_tracker_id: '',
   // 默认的cnzz tracker ID，自有站点请修改
@@ -63,10 +65,11 @@ var config = {
 
   // 邮箱配置
   mail_opts: {
-    host: 'smtp.126.com',
-    port: 25,
+    //host: 'smtp.exmail.qq.com',
+    //port: 465,
+    service: 'QQex',
     auth: {
-      user: 'tjuacmclub@126.com',
+      user: 'admin@tjuacm.org',
       pass: 'tjuacm123'
     }
   },
@@ -76,7 +79,7 @@ var config = {
   weibo_id: 'your_weibo_id',
 
   // admin 可删除话题，编辑标签，设某人为达人
-  admins: { user_login_name: true },
+  admins: { admin : true },
 
   // github 登陆的配置
   GITHUB_OAUTH: {
@@ -94,9 +97,9 @@ var config = {
 
   // 7牛的access信息，用于文件上传
   qn_access: {
-    accessKey: 'your access key',
-    secretKey: 'your secret key',
-    bucket: 'your bucket name',
+    accessKey: 'YOUR KEY',
+    secretKey: 'YOUR SECRET',
+    bucket: 'MyBucket',
     domain: 'http://{bucket}.qiniudn.com'
   },
 
